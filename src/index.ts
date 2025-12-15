@@ -4,6 +4,11 @@ import http from 'http';
 import cookieParser from 'cookie-parser';
 import compression from 'compression';
 import cors from 'cors';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+// Load environment variables from .env file
+dotenv.config();
 
 // Initialize Express app
 const app = express();
@@ -24,3 +29,8 @@ server.listen(8080,() =>{
     console.log('Server is running on http://localhost:8080/');
 })
 
+mongoose.Promise = Promise;
+mongoose.connect(process.env.DB_HOST!);
+mongoose.connection.on('error', (error: Error) =>{
+    console.log(error);
+})
