@@ -64,7 +64,7 @@ The goal of this project is not just functionality, but **production-quality bac
 
 #### Create a .env file in the root directory
 - **DB_HOST =** your_mongodb_connection 
-- **SECRET_KEY =** your_SECRET_KEY
+- **SECRET_KEY =** your_SECRET_KEY 
 
 </div>
 
