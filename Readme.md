@@ -58,6 +58,15 @@ The goal of this project is not just functionality, but **production-quality bac
 
 ---
 
+## ⚙️ Environment Setup
+
+<div>
+
+#### Create a .env file in the root directory
+- **DB_HOST =** your_mongodb_connection 
+
+</div>
+
 ## 📁 Project Structure
 
 ```text
