@@ -90,14 +90,24 @@ src/
 
 ## 🔐 API Endpoints
 
+The API can be tested using **Postman**.
+
+### Steps
+1. Import the API endpoints manually or via collection
+2. Register a user using `/auth/register`
+3. Login via `/auth/login` and copy the JWT token
+4. Add the token as a **Bearer Token** in Postman
+5. Access protected routes such as `/api/users`
+
+
 ### Authentication
-- `POST /api/auth/register` – Create a new user
-- `POST /api/auth/login` – Authenticate user and return JWT
+- `POST /auth/register` – Create a new user
+- `POST /auth/login` – Authenticate user and return JWT
 
 ### Users (Protected)
-- `GET /api/users` – Get all users (JWT required)
-- `PATCH /api/users/:id` – Update own user (JWT + ownership)
-- `DELETE /api/users/:id` – Delete own user (JWT + ownership)
+- `GET /users` – Get all users (JWT required)
+- `PATCH /users/:id` – Update own user (JWT + ownership)
+- `DELETE /users/:id` – Delete own user (JWT + ownership)
 
 ---
 
