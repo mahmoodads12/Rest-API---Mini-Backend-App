@@ -28,8 +28,6 @@ The goal of this project is not just functionality, but **production-quality bac
 
 ## ✨ Features
 
-<div>
-
 - User authentication (Register / Login)
 - Secure password handling
 - JWT-based authentication
@@ -38,13 +36,9 @@ The goal of this project is not just functionality, but **production-quality bac
 - MongoDB integration
 - Clean separation of concerns
 
-</div>
-
 ---
 
 ## 🧱 Tech Stack
-
-<div>
 
 - **Node.js**
 - **TypeScript**
@@ -54,30 +48,87 @@ The goal of this project is not just functionality, but **production-quality bac
 - **bcrypt**
 - **Middleware-based architecture**
 
-</div>
-
 ---
 
 ## ⚙️ Environment Setup
 
-<div>
+Create a `.env` file in the root directory:
 
-#### Create a .env file in the root directory
-- **DB_HOST =** your_mongodb_connection 
-- **SECRET_KEY =** your_SECRET_KEY 
+```env
+DB_HOST=your_mongodb_connection
+SECRET_KEY=your_secret_key
+```
 
-</div>
+---
 
 ## 📁 Project Structure
 
 ```text
 src/
- ├── controllers/
- ├── models/
- ├── routes/
- ├── middleware/
- ├── helpers/
- ├── config/
- ├── app.ts
- └── server.ts 
- 
+├── controllers/
+│   ├── authentification.ts   # Auth controllers (register, login)
+│   └── users.ts              # User controllers
+│
+├── db/
+│   └── users.ts              # Database access logic
+│
+├── helpers/
+│   └── index.ts              # Shared helper functions
+│
+├── middlewares/
+│   └── index.ts              # Authentication & ownership middleware
+│
+├── router/
+│   ├── authentification.ts   # Auth routes
+│   ├── users.ts              # User routes
+│   └── index.ts              # Router aggregation
+│
+├── index.ts                  # Application entry point
+```
+
+---
+
+## 🔐 API Endpoints
+
+### Authentication
+- `POST /api/auth/register` – Create a new user
+- `POST /api/auth/login` – Authenticate user and return JWT
+
+### Users (Protected)
+- `GET /api/users` – Get all users (JWT required)
+- `PATCH /api/users/:id` – Update own user (JWT + ownership)
+- `DELETE /api/users/:id` – Delete own user (JWT + ownership)
+
+---
+
+## 🛡️ Authorization
+
+- **isAuthenticated** – Validates JWT token
+- **isOwner** – Ensures users can only modify their own data
+
+---
+
+## ▶️ Getting Started
+
+```bash
+npm install
+npm start
+```
+
+---
+
+## 🧠 Why This Project Matters
+
+- Realistic backend architecture
+- Proper authentication & authorization
+- Clean separation of concerns
+- Easy to explain in interviews
+- Suitable as a production base
+
+---
+
+## 👤 Author
+
+**Mahmoud Adas**  
+Junior Backend / Full-Stack Developer  
+Focused on clean backend architectures and scalable APIs.
